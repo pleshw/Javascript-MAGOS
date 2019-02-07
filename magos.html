@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>MAze GeneratOr and Solver</title>
+	<script type="text/javascript" src="grid.js"></script>
+	<script type="text/javascript" src="render.js"></script>
+	<script type="text/javascript" src="builder.js"></script>
+	<script type="text/javascript" src="solver.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+<style type="text/css">
+	.square{
+		position: absolute;
+		max-width: 1130px;
+		margin: 0;
+		padding: 0;
+		top: 50%;
+		left: 40%;
+		transform: translate(-50%, -50%);
+	}
+
+	.controlPanel{
+		position: absolute;
+		margin: 4.4rem 0;
+		padding: 0;
+		list-style: none;
+		right: -32%;
+	}
+
+	.controlPanel li{
+		margin-bottom: 12px;
+	}
+	.controlPanel > li > input{
+		width: 140px;
+		padding: .1rem 2.2rem .2rem 2.2rem;
+		font-size: 18px;
+		text-align: center;
+		margin: 0 .2rem .2rem .44rem;
+	}
+
+	.controlPanel input::placeholder{
+		text-align:center;
+		font-family:  Arial, Helvetica, serif;
+		color:rgb(50,50,50);
+	}
+
+	.controlPanel button{
+		background: white;
+		padding: 4px 12px 4px 12px;
+		color: rgba(80,50,110);
+		width: 7rem;
+		height: 2rem;
+		font-size: .76em;
+		border: 2px solid rgba(150,120,180);
+		text-align: center;
+		font-family: Arial, Helvetica, serif;
+		margin-right: .6rem;
+	}
+
+	.controlPanel button a{
+		text-decoration: none;
+	}
+
+	.dual{
+		width: 22px !important;
+		padding: .1rem 2.2rem .2rem 2.2rem;
+		text-align: center;
+		margin: 0 0 0 4.4% !important;
+	}
+
+</style>
+
+
+	<div class="square">
+		<ul class="controlPanel"> 
+			<li>
+				<label style="font-family: sans-serif;">Start</label>
+				<input class="dual" type="text" id="startX" placeholder="x">
+				<input class="dual" type="text" id="startY" placeholder="y">
+			</li>
+			<li><input type="text" id="backgroundColor" placeholder="backgroundColor" tabindex="1"></li>
+			<li><input type="text" id="wallColor" placeholder="wallColor" tabindex="2"></li>
+			<li><input type="text" id="gridCols" placeholder="gridCols" tabindex="3"></li>
+			<li><input type="text" id="gridRows" placeholder="gridRows" tabindex="4"></li>
+			<li><input type="text" id="gridMarginTop" placeholder="gridMarginTop" tabindex="5"></li>
+			<li><input type="text" id="gridMarginLeft" placeholder="gridMarginLeft" tabindex="6"></li>
+			<li><button id="builderStarter">Start Building</button><button id="builderStop">Stop Building</button></li>
+			<li><button id="solverStarter">Start Solving</button><button>Stop Solving</button></li>
+			<li><button id="reset">Reset</button><button id="decoration">Decoration</button></li>
+		</ul>
+		<canvas id="canvas"></canvas>	
+	</div>
+
+
+	
+
+</body>
+</html>
